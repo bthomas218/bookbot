@@ -1,4 +1,4 @@
-from stats import count_words
+from stats import count_words, count_characters
 
 def get_book_text(file_path):
     with open(file_path) as f:
@@ -6,6 +6,9 @@ def get_book_text(file_path):
     return file_contents
 
 def main():
-    num_words = count_words(get_book_text("books/frankenstein.txt"))
+    text = get_book_text("books/frankenstein.txt")
+    num_words = count_words(text)
+    char_counter = count_characters(text)
     print(f"Found {num_words} total words")
+    print(f"{char_counter}")
 main()
